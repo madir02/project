@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../email-edited"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "project"
+	}
+}
