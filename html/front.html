@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример Фронтэнда</title>
+</head>
+<body>
+    <h1>Менеджер задач</h1>
+    <input type="text" id="taskInput">
+    <button onclick="addTask()">Добавить задачу</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        // Функция для добавления задачи
+        function addTask() {
+            const taskInput = document.getElementById('taskInput').value;
+            const taskList = document.getElementById('taskList');
+
+            fetch('/api/todos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ task: taskInput })
+            })
+            .then(response => response.text())
+            .then(message => {
+                alert(message); // Выводим сообщение об успешном добавлении задачи
+                taskList.innerHTML += `<li>${taskInput}</li>`; // Добавляем задачу в список
+                document.getElementById('taskInput').value = ''; // Очищаем поле ввода
+            })
+            .catch(error => console.error('Ошибка:', error));
+        }
+
+        // Функция для загрузки списка задач при загрузке страницы
+        window.onload = function() {
+            fetch('/api/todos')
+            .then(response => response.json())
+            .then(data => {
+                const taskList = document.getElementById('taskList');
+                data.forEach(todo => {
+                    taskList.innerHTML += `<li>${todo.task}</li>`;
+                });
+            })
+            .catch(error => console.error('Ошибка:', error));
+        };
+    </script>
+</body>
+</html>

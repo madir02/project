@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример страницы</title>
+</head>
+<body>
+    <h1>Привет, мир!</h1>
+    <p>Это пример страницы на английском языке.</p>
+    
+    <button onclick="translatePage()">Перевести на русский</button>
+
+    <script>
+        function translatePage() {
+            document.querySelector('h1').innerText = 'Привет, мир!';
+            document.querySelector('p').innerText = 'Это пример страницы на русском языке.';
+            document.querySelector('button').innerText = 'Вернуть на английский';
+            document.querySelector('button').setAttribute('onclick', 'translateBack()');
+        }
+
+        function translateBack() {
+            document.querySelector('h1').innerText = 'Hello, World!';
+            document.querySelector('p').innerText = 'This is an example page in English.';
+            document.querySelector('button').innerText = 'Перевести на русский';
+            document.querySelector('button').setAttribute('onclick', 'translatePage()');
+        }
+    </script>
+</body>
+</html>

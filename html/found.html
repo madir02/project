@@ -1,10 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отчет о потерянных и найденных вещах</title>
+    <link rel="stylesheet" href="../CSS/chart.css">
 </head>
 <body>
-  <div id="root"></div>
-  <script type="module" src="Dashboard.jsx"></script>
+    <div class="container">
+        <div class="header">
+          <h1 style="color: #4147D5;">Latest Report</h1>
+            <div class="filter">
+                <label for="all">ALL</label>
+                <label for="lost">Потерянные</label>
+                <input type="radio" id="lost" name="filter" value="lost">
+                <label for="found">Найденные</label>
+                <input type="radio" id="found" name="filter" value="found">
+            </div>
+            
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Report ID <hr></th>
+                    <th>Date <hr></th>
+                    <th>Owner <hr></th>
+                    <th>Items <hr></th>
+                    <th>Ph. number <hr></th>
+                    <th>Status <hr></th>
+                    
+                </tr>
+                
+            </thead>
+        
+            <tbody>
+                <tr>
+                    <td>A00000021</td>
+                    <td>20:45 | Sunday - March 2 nd</td>
+                    <td>Giana Rosser</td>
+                    <td>Ring</td>
+                    <td>+7 777 564 21 85</td>
+                    <td><button class="lost">Lost</button></td>
+                </tr>
+                <tr>
+                    <td>A00000085</td>
+                    <td>13:32 | Понедельник - 13 марта</td>
+                    <td>Corey Dokidis</td>
+                    <td>Umbrella</td>
+                    <td>+7 776 844 58 65</td>
+                    <td><button class="found">Found</button></td>
+                </tr>
+                <tr>
+                    <td>A00000016</td>
+                    <td>03:21 | Вторник - 27 февраля</td>
+                    <td>Desirea Ekstrom</td>
+                    <td>Шляпа</td>
+                    <td>+7 771 565 75 12</td>
+                    <td ><button class="lost">Lost</button></td>
+                </tr>
+                <tr>
+                    <td>A00000063</td>
+                    <td>16:56 | Среда - 25 февраля</td>
+                    <td>Marcus Septumes</td>
+                    <td>Сумка для покупок</td>
+                    <td>+7 747 212 75 36</td>
+                    <td><button class="found">Found</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
+
 </html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Screen</title>
+  <link rel="stylesheet" href="../CSS/gemini.css">
+</head>
+<body>
+    <div style="display: flex;">
+    <div style="height: 100vh; width: 500px; background:  #F0F0F0; display: grid; align-items: center; align-content: center; justify-content: center;">
+    <div style="height: 100px; width: 400px; background: white;"> <img src="../img/card1.png" alt="" style="height: 50px; width: 50px; border-radius: 10px;"><h1>Amanzhol Nursultan</h1><p >New Message</p></div>
+    <div style="height: 100px; width: 400px; background: white; margin-top: 15px;"></div>
+    <div style="height: 100px; width: 400px; background: white; margin-top: 15px;"></div>
+    </div>
+  <div class="chat-container">
+    <header class="chat-header">
+      <h1>Amanzhol Nursultan</h1>
+      <p>Last seen 3 hours ago</p>
+    </header>
+    <main class="chat-main">
+      <ul class="chat-messages"></ul>
+    </main>
+    <footer class="chat-footer">
+      <form class="chat-form">
+        <input type="text" name="message" placeholder="Type your message">
+        <button type="submit">Send</button>
+      </form>
+    </footer>
+  </div>
+    </div>
+  <script src="../JS/gemini.js"></script>
+</body>
+</html>
